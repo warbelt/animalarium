@@ -12,7 +12,7 @@ public class CharacterController2D : MonoBehaviour
 
 	[Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;  // How much to smooth out the movement
 
-	ICharacterInput input;
+	ICharacterInputProvider input;
 	CharacterStats stats;
 
 	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
@@ -33,7 +33,7 @@ public class CharacterController2D : MonoBehaviour
 		if (OnLandEvent == null)
 			OnLandEvent = new UnityEvent();
 
-		input = GetComponent<ICharacterInput>();
+		input = GetComponent<ICharacterInputProvider>();
 		stats = GetComponent<CharacterStats>();
 	}
 
@@ -55,8 +55,8 @@ public class CharacterController2D : MonoBehaviour
 			}
 		}
 
-		float horizontal = input.getHorizontal();
-		bool jump = input.getJump();
+		float horizontal = input.GetHorizontal();
+		bool jump = input.GetJump();
 
 		Move(horizontal * stats.RunSpeed * Time.deltaTime, jump);
 	}

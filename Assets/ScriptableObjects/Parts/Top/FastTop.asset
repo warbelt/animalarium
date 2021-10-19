@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: FastTop
   m_EditorClassIdentifier: 
   headForce: 200
-  headVelocity: {x: 10, y: 12}
+  headVelocity: {x: 10, y: 20}

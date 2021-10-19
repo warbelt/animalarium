@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: EnemyTop
   m_EditorClassIdentifier: 
   headForce: 200
-  headVelocity: {x: -20, y: 14}
+  headVelocity: {x: -20, y: 16}

@@ -23,9 +23,9 @@ public class DebugUI : MonoBehaviour
     {
         ballSpeedText.text = "Ball speed: " + ballRB.velocity.magnitude.ToString("2f");
 
-        if (Input.GetKeyDown("r")) {
-            ballRB.transform.position = ballStartPos;
-            ballRB.velocity = new Vector2(0,0);
-        }
+        //if (Input.GetKeyDown("r")) {
+        //    ballRB.transform.position = ballStartPos;
+        //    ballRB.velocity = new Vector2(0,0);
+        //}
     }
 }

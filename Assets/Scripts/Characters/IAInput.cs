@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IAInput : MonoBehaviour, ICharacterInput
+public class IAInput : MonoBehaviour, ICharacterInputProvider
 {
     [SerializeField] LayerMask ballMask;
     [SerializeField] LayerMask floorMask;
@@ -30,14 +30,18 @@ public class IAInput : MonoBehaviour, ICharacterInput
         }
     }
 
-    float ICharacterInput.getHorizontal()
+    float ICharacterInputProvider.GetHorizontal()
     {
         return moveH;
     }
 
-    public bool getJump()
+    bool ICharacterInputProvider.GetJump()
     {
         return jump;
+    }
+
+    bool ICharacterInputProvider.GetAction() {
+        return false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
